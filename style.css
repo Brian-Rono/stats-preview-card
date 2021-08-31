@@ -1,0 +1,128 @@
+:root {
+  --link-color: hsl(228, 45%, 44%);
+
+  /* Primary */
+
+  /* - Very dark blue (main background): */
+  --vdark-blue: hsl(233, 47%, 7%);
+  /* - Dark desaturated blue (card background)*/
+  --dark-desaturated-blue: hsl(244, 38%, 16%);
+  /* - Soft violet (accent):  */
+  --soft-violet: hsl(277, 64%, 61%, 43%);
+
+  /* Neutral */
+
+  /* - White (main heading, stats): */
+  --white: hsl(0, 0%, 100%);
+  /* - Slightly transparent white (main paragraph) */
+  --slightly-white: hsla(0, 0%, 100%, 0.75);
+  /* - Slightly transparent white (stat headings):  */
+  --slight-transparent-white: hsla(0, 0%, 100%, 0.6);
+
+  --font-size: 15px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: var(--font-size);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--vdark-blue);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.main-container {
+  background-color: var(--dark-desaturated-blue);
+  width: 100%;
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.hero {
+  background-image: url(/images/image-header-mobile.jpg);
+  background-size: cover;
+  width: 100%;
+  min-height: 300px;
+}
+
+.overlay {
+  background-color: var(--soft-violet);
+  width: 100%;
+  height: 300px;
+  z-index: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.content > div {
+  margin: 8px 0;
+  padding: 8px;
+}
+
+.title {
+  font-weight: 700;
+  color: var(--white);
+  font-size: 2rem;
+}
+
+.title span {
+  color: var(--soft-violet);
+  font-size: 2rem;
+}
+
+.main p {
+  color: var(--slightly-white);
+}
+
+.stat {
+  margin: 15px 0;
+}
+
+.stat h3 {
+  color: var(--white);
+}
+
+.stat h4 {
+  color: var(--slight-transparent-white);
+}
+
+@media only screen and (min-width: 1040px) {
+  body {
+    padding: 100px;
+  }
+
+  .main-container {
+    width: 100vw;
+    max-width: 1040px;
+    height: 66vh;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .hero {
+    background-image: url(/images/image-header-desktop.jpg);
+    width: 100%;
+    height: 66vh;
+  }
+
+  .overlay {
+    background-color: var(--soft-violet);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+}
